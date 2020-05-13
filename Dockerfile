@@ -1,4 +1,4 @@
-FROM ubuntu:18.04 AS build
+FROM ubuntu:focal AS build
 RUN apt update && \
 	apt install -y build-essential gcc libssl-dev libexpat1-dev
 COPY . /build
@@ -12,7 +12,7 @@ RUN ./configure --with-conf-file=/unbound/unbound.conf \
 RUN make
 RUN make install
 
-FROM ubuntu:18.04
+FROM ubuntu:focal
 RUN apt update && \
 	apt install -y libssl1.1 libexpat1 && \
 	apt clean && \
