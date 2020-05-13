@@ -17,6 +17,7 @@ RUN apt update && \
 	apt install -y libssl1.1 libexpat1 && \
 	apt clean && \
 	rm -Rf /var/lib/apt/*
+RUN useradd -d /unbound unbound
 
 COPY --from=build /usr/local /usr/local
 COPY --from=build /unbound /unbound
