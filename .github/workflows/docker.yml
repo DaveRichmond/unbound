@@ -13,7 +13,7 @@ jobs:
           buildx-version: latest
           qemu-version: latest
       - name: Available versions
-        run: echo ${{ steps.buildx.outputs.platform }}
+        run: echo ${{ steps.buildx.outputs.platforms }}
       - name: dockerhub login
         run: |
           echo ${{ secrets.DOCKER_PASSWORD }} | \
