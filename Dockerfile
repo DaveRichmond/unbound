@@ -22,5 +22,5 @@ RUN useradd -d /unbound unbound
 COPY --from=build /usr/local /usr/local
 COPY --from=build /unbound /unbound
 
-CMD ["/usr/local/sbin/unbound", "-v"]
+CMD ["/usr/local/sbin/unbound", "-v", "-d"]
 
